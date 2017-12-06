@@ -48,10 +48,10 @@ router.route('/assignments')
         console.log('POST received');
         
         //Ottieni parametri dal client
-        var assignment_type = req.body.a;
-        var student_id = req.body.b;
-        var assignment_id = req.body.c;
-        var assignment_content = req.body.d;
+        var assignment_type = req.body.assignment_type;
+        var student_id = req.body.student_id;
+        var assignment_id = req.body.assignment_id;
+        var assignment_content = req.body.assignment_content;
 
         assignments_list.push(new Assignment(assignment_type, student_id, assignment_id, assignment_content));
 
