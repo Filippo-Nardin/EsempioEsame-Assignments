@@ -2,6 +2,18 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
+// METODI E VARIABILI
+var assignments_list = [];
+
+class Assignment{
+    constructor(assignment_type, student_id, assignment_id, assignment_content) {
+        this.assignment_type = assignment_type;
+        this.student_id = student_id;
+        this.assignment_id = assignment_id;
+        this.assignment_content = assignment_content;
+    }
+}
+
 // instantiate express
 var app = express();
 var router = express.Router();
@@ -27,6 +39,9 @@ router.route('/assignments')
         console.log('\n');
         console.log('GET received');
         
+        assignments_list.push(new Assignment("assignment_type", "student_id", "assignment_id", "assignment_content"));
+        console.log(assignments_list);
+
         res.send(assignments_list);
         res.end();
         
@@ -81,16 +96,3 @@ app.use((err, req, res, next) => {
 app.listen(port, function () {
     console.log('Example app listening on port '+ port);
 });
-
-
-// METODI E VARIABILI
-var assignments_list = [];
-
-class Assignment{
-    constructor(assignment_type, student_id, assignment_id, assignment_content) {
-        this.assignment_type = assignment_type;
-        this.student_id = student_id;
-        this.assignment_id = assignment_id;
-        this.assignment_content = assignment_content;
-    }
-}
