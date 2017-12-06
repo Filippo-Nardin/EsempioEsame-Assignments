@@ -86,9 +86,11 @@ app.listen(port, function () {
 // METODI E VARIABILI
 var assignments_list = [];
 
-function Assignment(assignment_type, student_id, assignment_id, assignment_content) {
-    this.assignment_type = assignment_type;
-    this.student_id = student_id;
-    this.assignment_id = assignment_id;
-    this.assignment_content = assignment_content;
+class Assignment{
+    constructor(assignment_type, student_id, assignment_id, assignment_content) {
+        this.assignment_type = assignment_type;
+        this.student_id = student_id;
+        this.assignment_id = assignment_id;
+        this.assignment_content = assignment_content;
+    }
 }
