@@ -38,9 +38,6 @@ router.route('/assignments')
 
         console.log('\n');
         console.log('GET received');
-        
-        assignments_list.push(new Assignment("assignment_type", "student_id", "assignment_id", "assignment_content"));
-        console.log(assignments_list);
 
         res.send(assignments_list);
         res.end();
@@ -48,13 +45,13 @@ router.route('/assignments')
     })
     .post(function (req, res) {        
         console.log('\n');
-        console.log('Request received');
+        console.log('POST received');
         
         //Ottieni parametri dal client
-        var assignment_type = req.body.assignment_type;
-        var student_id = req.body.student_id;
-        var assignment_id = req.body.assignment_id;
-        var assignment_content = req.body.assignment_content;
+        var assignment_type = req.body.a;
+        var student_id = req.body.b;
+        var assignment_id = req.body.c;
+        var assignment_content = req.body.d;
 
         assignments_list.push(new Assignment(assignment_type, student_id, assignment_id, assignment_content));
 
